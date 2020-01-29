@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="knapsackImageView" prefHeight="662.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Text fx:id="itemValueText" layoutX="11.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField fx:id="knapsackCapacityTextField" layoutX="144.0" layoutY="48.0" prefHeight="27.0" prefWidth="82.0" />
+      <TextField fx:id="itemValueTestField" layoutX="151.0" layoutY="146.0" prefHeight="27.0" prefWidth="82.0" />
+      <TextField fx:id="itemWeightTextField" layoutX="151.0" layoutY="185.0" prefHeight="27" prefWidth="82.0" />
+      <TableView fx:id="itemTable" layoutX="28.0" layoutY="282.0" prefHeight="250.0" prefWidth="225.0">
+        <columns>
+            <TableColumn fx:id="numberTableColumn" prefWidth="42.0" text="%numberColumn" />
+            <TableColumn fx:id="valueTableColumn" prefWidth="83.0" text="%weightColumn" />
+          <TableColumn fx:id="weightTableColumn" prefWidth="98.0" sortable="false" text="%valueColumn" />
+        </columns>
+      </TableView>
+      <Text fx:id="chodeAlgoritmText" layoutX="280.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button fx:id="solveButton" layoutX="450.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#solveClicked" text="%solveButton" />
+      <Button fx:id="addItemButton" layoutX="65.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#addItemClicked" text="%addItemButton" />
+      <Label fx:id="knapsackCapacityLabel" layoutX="14.0" layoutY="53.0" text="%knapsackCapacityLabel" />
+      <Label fx:id="itemValueLabel" layoutX="19.0" layoutY="151.0" text="%itemValueLabel" />
+      <Label fx:id="itemWeightLabel" layoutX="19.0" layoutY="190.0" text="%itemWeightLabel" />
+      <Label fx:id="choiceAlgorithmLabel" layoutX="280.0" layoutY="216.0" text="%algorithmLabel" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="322.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../1200px-Knapsack.svg.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addCapacityButton" layoutX="62.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#addCapacityClicked" text="%knapsackCapacityButton" />
+      <MenuBar prefHeight="27.0" prefWidth="600.0">
+        <menus>
+          <Menu fx:id="programMenuBar" mnemonicParsing="false" text="%applicationMenu">
+               <items>
+                  <MenuItem fx:id="exitMenu" mnemonicParsing="false" onAction="#exitAction" text="%exitMenu" />
+                  <MenuItem fx:id="aboutMenu" mnemonicParsing="false" onAction="#aboutAction" text="%aboutMenu" />
+               </items>
+          </Menu>
+          <Menu fx:id="languageChoice" mnemonicParsing="false" text="%languageChoice">
+            <items>
+                  <MenuItem fx:id="ukMenuItem" mnemonicParsing="false" onAction="#ukAction" text="%GBMenu" />
+              <MenuItem fx:id="plMennuItem" mnemonicParsing="false" onAction="#polishAction" text="%polishMenu" />
+                  <MenuItem fx:id="usMenuItem" mnemonicParsing="false" onAction="#usAction" text="%USMenu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="dateTime" layoutX="91.0" layoutY="548.0" text="%date" />
+      <TextField fx:id="solutionKnapsackCapacity" layoutX="470.0" layoutY="430.0" prefHeight="27.0" prefWidth="109.0" />
+      <TextArea fx:id="solutionTextArea" layoutX="287.0" layoutY="321.0" prefHeight="97.0" prefWidth="292.0" />
+      <TextField fx:id="solutionKnapsackPrice" layoutX="471.0" layoutY="469.0" prefHeight="27.0" prefWidth="108.0" />
+      <Label fx:id="solutionCapacityLabel" layoutX="253.0" layoutY="435.0" text="%solutionCapacityLabel" />
+      <Label fx:id="solutionPriceLabel" layoutX="269.0" layoutY="474.0" text="%solutionPriceLabel" />
+      <Button fx:id="solutionGreedy" layoutX="336.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#randomClicked" text="%solutionGreedy" />
+      <Button fx:id="solutionRandom" layoutX="456.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#greedyClicked" text="%solutionRandom" />
+      <ComboBox fx:id="comboBox" layoutX="420.0" layoutY="211.0" onAction="#solveClicked" prefWidth="150.0" />
+
+   </children>
+</AnchorPane>
